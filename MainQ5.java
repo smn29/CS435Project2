@@ -43,7 +43,6 @@ class Main {
     }
   }
 
-   //fix and finish dijkstras (04/08) 
   public static HashMap<Node, Integer> dijkstras(final Node start){
     /*used Geek for Geeks as reference: https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/ and https://www.geeksforgeeks.org/java-program-for-dijkstras-shortest-path-algorithm-greedy-algo-7/
 
