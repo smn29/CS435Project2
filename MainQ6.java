@@ -51,42 +51,42 @@ public class Main {
     d.Set curr to the next min node – the node with the smallest g+h value not yet finalized.
     4.Return the g value for the destination node.
   */
-  HashMap<Integer, Node> mapdist = new HashMap<Integer, Node>();
-  HashMap<Integer, Node> visited = new HashMap<Integer, Node>();
-  HashSet<Node> set = new HashSet<Node>();
-  PriorityQueue<Node> q = new PriorityQueue<Node>();
-  int dist = 0;
+	HashMap<Integer, Node> mapdist = new HashMap<Integer, Node>();
+	HashMap<Integer, Node> visited = new HashMap<Integer, Node>();
+	HashSet<Node> set = new HashSet<Node>();
+	PriorityQueue<Node> q = new PriorityQueue<Node>();
+	int dist = 0;
 
-  set = sourceNode.nodeset();
-  for(Node n: set){
-    sourceNode.isTrue();
-    int xdist = Math.abs(n.xcoor() - destNode.xcoor());
+	set = sourceNode.nodeset();
+	for(Node n: set){
+		sourceNode.isTrue();
+		int xdist = Math.abs(n.xcoor() - destNode.xcoor());
 		int ydist = Math.abs(n.ycoor() - destNode.ycoor());
-    int h = xdist + ydist;
-    mapdist.put(h, sourceNode);
-    visited.put(0, sourceNode);
-    HashMap<Integer, Node> nmap = n.nodes();
-    if(!nmap.isEmpty()){
-      Node prev = ssourceNode;
-      HashMap<Integer, Node> prevmap = prev.nodes();
-      dist = prevmap.get(n);
-      }
-    mapdist.put(dist, n);
-    if(n != sourceNode){
-      q.add(n);
-      } 
-    }
+		int h = xdist + ydist;
+		mapdist.put(h, sourceNode);
+		visited.put(0, sourceNode);
+		HashMap<Integer, Node> nmap = n.nodes();
+		if(!nmap.isEmpty()){
+			Node prev = ssourceNode;
+			HashMap<Integer, Node> prevmap = prev.nodes();
+			dist = prevmap.get(n);
+			}
+		mapdist.put(dist, n);
+		if(n != sourceNode){
+			q.add(n);
+			} 
+	}
 
-  while(!q.isEmpty()){
-    Node node = q.poll();
-    int ndist = mapdist.get(node);
-    node.isTrue();
-    if(!mapdist.containsKey(node)){
-      mapdist.put(ndist, node);
-      visited.put(1, node);
-      }
-    }
-  return mapdist;
-  }
+	while(!q.isEmpty()){
+		Node node = q.poll();
+		int ndist = mapdist.get(node);
+		node.isTrue();
+		if(!mapdist.containsKey(node)){
+			mapdist.put(ndist, node);
+			visited.put(1, node);
+			}
+		}
+	return mapdist;
+	}
 
 }
